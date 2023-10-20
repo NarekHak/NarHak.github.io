@@ -1,5 +1,7 @@
 .sax {
   margin: 0;
+  position: relative;
+  box-sizing: border-box;
 }
 
 .h1 {

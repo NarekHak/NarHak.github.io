@@ -1,50 +1,89 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>CodePen - Mail form with attachment</title>
-  <link rel='stylesheet' href='https://codepen.io/nicolasjesenberger/pen/GRYvOWy/d5176f9552830811da3e2bde0120cc26.css'><link rel="stylesheet" href="./style.css">
-
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<div class="mail-wrapper">
-  <form class="mail">
-    <h1 class="mail-title">Send a mail:</h1>
-    <input class="mail-field" type="email" placeholder="Email">
-    <input class="mail-field" type="text" placeholder="Subject">
-    <div class="mail-content-section">
-      <textarea class="mail-field content" rows="4" placeholder="Body"></textarea>
-      <div class="mail-attachment-container">
-        <div class="mail-attachment-label-container">
-          <svg class="mail-attachment-label-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.438 11.662l-9.19 9.19a6.003 6.003 0 11-8.49-8.49l9.19-9.19a4.002 4.002 0 015.66 5.66l-9.2 9.19a2.001 2.001 0 11-2.83-2.83l8.49-8.48" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-          <label for="file">Add attachment</label>
-        </div>
-        <div class="mail-attachment-wrapper hidden">          
-          <div class="mail-attachment">
-            <img class="mail-attachment-image hidden" src="" alt="">
-            <p class="mail-attachment-extension hidden"></p>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CodePen - Mail form with attachment</title>
+    <link
+      rel="stylesheet"
+      href="https://codepen.io/nicolasjesenberger/pen/GRYvOWy/d5176f9552830811da3e2bde0120cc26.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- partial:index.partial.html -->
+    <div class="mail-wrapper">
+      <form class="mail" method="post">
+        <h1 class="mail-title">Send a mail:</h1>
+        <input class="mail-field" type="email" placeholder="Email" />
+        <input class="mail-field" type="text" placeholder="Subject" />
+        <div class="mail-content-section">
+          <textarea
+            class="mail-field content"
+            rows="4"
+            placeholder="Body"
+          ></textarea>
+          <div class="mail-attachment-container">
+            <div class="mail-attachment-label-container">
+              <svg
+                class="mail-attachment-label-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M21.438 11.662l-9.19 9.19a6.003 6.003 0 11-8.49-8.49l9.19-9.19a4.002 4.002 0 015.66 5.66l-9.2 9.19a2.001 2.001 0 11-2.83-2.83l8.49-8.48"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+              <label for="file">Add attachment</label>
+            </div>
+            <div class="mail-attachment-wrapper hidden">
+              <div class="mail-attachment">
+                <img class="mail-attachment-image hidden" src="" alt="" />
+                <p class="mail-attachment-extension hidden"></p>
+              </div>
+            </div>
+            <input class="mail-attachment-input" id="file" type="file" />
+            <button class="mail-attachment-remove-button hidden" type="button">
+              <svg
+                class="mail-attachment-remove-button-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 384 512"
+              >
+                <path
+                  d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+                />
+              </svg>
+            </button>
           </div>
         </div>
-        <input class="mail-attachment-input" id="file" type="file">
-        <button class="mail-attachment-remove-button hidden" type="button">
-          <svg class="mail-attachment-remove-button-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-            <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
-          </svg>
-        </button>
-      </div>
+        <footer class="mail-footer">
+          <p class="mail-signature">— To GymTeam</p>
+          <button
+            class="mail-button"
+            type="submit"
+            onclick="event.preventDefault();"
+          >
+            Send mail
+          </button>
+        </footer>
+      </form>
+      <img
+        class="mail-paperclip front hidden"
+        src="https://assets.codepen.io/4175254/paperclip-front.png"
+        alt=""
+      />
+      <img
+        class="mail-paperclip back hidden"
+        src="https://assets.codepen.io/4175254/paperclip-back.png"
+        alt=""
+      />
     </div>
-    <footer class="mail-footer">
-      <p class="mail-signature">— To GymTeam</p>
-      <button class="mail-button" type="submit" onclick="event.preventDefault();">Send mail</button>
-    </footer>
-  </form>
-  <img class="mail-paperclip front hidden" src="https://assets.codepen.io/4175254/paperclip-front.png" alt="" />
-  <img class="mail-paperclip back hidden" src="https://assets.codepen.io/4175254/paperclip-back.png" alt="" /> 
-  </div>
-</div>
-<!-- partial -->
-  <script src='https://codepen.io/nicolasjesenberger/pen/VwEzMrY/81eb6139c2c9b7dbc46e43d898e7d29b.js'></script><script  src="./script.js"></script>
 
-</body>
+    <!-- partial -->
+    <script src="https://codepen.io/nicolasjesenberger/pen/VwEzMrY/81eb6139c2c9b7dbc46e43d898e7d29b.js"></script>
+    <script src="./script.js"></script>
+  </body>
 </html>
